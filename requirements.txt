@@ -1,7 +1,10 @@
-# No external dependencies required for this application
-# The application uses only standard library modules:
-# - tkinter (included with Python)
-# - sqlite3 (included with Python)
-# - re (included with Python)
-# - typing (included with Python)
-# - dataclasses (included with Python 3.7+)
+# External dependencies required for PDF and Excel export
+reportlab==3.6.12  # For PDF generation
+openpyxl==3.1.2    # For Excel generation
+
+# Note: The following standard libraries are also used but don't need installation:
+# - tkinter (for GUI)
+# - sqlite3 (for database)
+# - csv (for CSV export)
+
+
