@@ -107,9 +107,9 @@ class EmployeeUI:
         # Configure notebook and tabs
         style.configure("TNotebook", background=colors["bg_primary"])
         style.configure("TNotebook.Tab", padding=[12, 4], background=colors["bg_secondary"],
-                       foreground=colors["text_light"], font=('Calibri', 10, 'bold'))
+                    foreground=colors["text_light"], font=('Calibri', 10, 'bold'))
         style.map("TNotebook.Tab", background=[("selected", colors["accent"])],
-                 foreground=[("selected", colors["text_light"])])
+                foreground=[("selected", colors["text_light"])])
 
         # Configure treeview
         style.configure("Treeview", background="white", foreground=colors["text_dark"],

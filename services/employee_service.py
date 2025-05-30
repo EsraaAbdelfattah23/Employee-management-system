@@ -13,16 +13,9 @@ from reportlab.lib.styles import getSampleStyleSheet
 import openpyxl
 
 class EmployeeService:
-    """
-    Service class for employee-related business logic.
-    """
-    def __init__(self, database: Database):
-        """
-        Initialize the employee service with a database connection.
 
-        Args:
-            database: Database instance for data operations
-        """
+    def __init__(self, database: Database):
+    
         self.db = database
 
     def add_employee(self, employee_data: Dict[str, Any]) -> Tuple[bool, str, Optional[int]]:
@@ -131,9 +124,6 @@ class EmployeeService:
 
         Args:
             employee_id: ID of the employee to retrieve
-
-        Returns:
-            Tuple of (success, message, employee)
         """
         try:
             employees = self.db.fetch_all_employees()
@@ -151,8 +141,6 @@ class EmployeeService:
         Args:
             filename: Path to save the CSV file
 
-        Returns:
-            Tuple of (success, message, filename)
         """
         try:
             # Get all employees
@@ -182,9 +170,6 @@ class EmployeeService:
 
         Args:
             filename: Path to save the Excel file
-
-        Returns:
-            Tuple of (success, message, filename)
         """
         try:
             # Get all employees
@@ -231,9 +216,6 @@ class EmployeeService:
 
         Args:
             filename: Path to save the PDF file
-
-        Returns:
-            Tuple of (success, message, filename)
         """
         try:
             # Get all employees

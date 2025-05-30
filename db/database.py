@@ -7,12 +7,7 @@ class Database:
     Database class for handling SQLite operations.
     """
     def __init__(self, db_path: str):
-        """
-        Initialize database connection and create tables if they don't exist.
         
-        Args:
-            db_path: Path to the SQLite database file
-        """
         self.con = sqlite3.connect(db_path)
         self.cur = self.con.cursor()
 
@@ -38,9 +33,7 @@ class Database:
         
         Args:
             employee: Employee object containing data to insert
-            
-        Returns:
-            The ID of the newly inserted employee
+        
         """
         self.cur.execute(
             "INSERT INTO Employees VALUES (NULL,?,?,?,?,?,?,?)",
@@ -50,12 +43,6 @@ class Database:
         return self.cur.lastrowid
 
     def fetch_all_employees(self) -> List[Tuple]:
-        """
-        Fetch all employee records from the database.
-        
-        Returns:
-            List of tuples containing employee data
-        """
         self.cur.execute("SELECT * FROM Employees")
         rows = self.cur.fetchall()
         return rows
